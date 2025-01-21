@@ -6,6 +6,8 @@
 # echo "${myArray[*]:0}" # print all elements except first
 # echo "${myArray[*]:2:1}" # print elements from 1 to 2
 
+declare -A myArray
 myArray=( [name]=Paul [age]=20 )
 
 echo "${myArray[name]}"
+echo "${#myArray[@]}"
