@@ -13,3 +13,9 @@ echo $upper # HELLO WORLD!
 
 lower=${myVar,,}
 echo $lower # hello world!
+
+replace=${myVar/World/Buddy}
+echo $replace
+
+slice=${myVar:6:5}
+echo $slice 
