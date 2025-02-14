@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6366f1, #3b82f6);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #1e293b;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .blog-excerpt {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .read-more {
+            display: inline-block;
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #2563eb;
+        }
+
+        footer {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .blog-title {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+        <p>Welcome to my personal blog space</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#tech">Technology</a></li>
+            <li><a href="#lifestyle">Lifestyle</a></li>
+            <li><a href="#travel">Travel</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="blog-grid" id="blogContainer">
+            <!-- Blog posts will be dynamically added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 My Blog. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Sample blog data
+        const blogPosts = [
+            {
+                title: "Getting Started with Web Development",
+                excerpt: "Learn the basics of HTML, CSS, and JavaScript to kickstart your web development journey.",
+                image: "/api/placeholder/400/320",
+                date: "Feb 14, 2025",
+                author: "John Doe",
+                category: "tech"
+            },
+            {
+                title: "The Art of Mindful Living",
+                excerpt: "Discover how mindfulness can transform your daily life and boost your mental well-being.",
+                image: "/api/placeholder/400/320",
+                date: "Feb 13, 2025",
+                author: "Jane Smith",
+                category: "lifestyle"
+            },
+            {
+                title: "Exploring Hidden Gems in Asia",
+                excerpt: "Uncover amazing destinations off the beaten path in Southeast Asia.",
+                image: "/api/placeholder/400/320",
+                date: "Feb 12, 2025",
+                author: "Mike Wilson",
+                category: "travel"
+            }
+        ];
+
+        // Function to create blog cards
+        function createBlogCard(post) {
+            return `
+                <article class="blog-card">
+                    <img src="${post.image}" alt="${post.title}" class="blog-img">
+                    <div class="blog-content">
+                        <h2 class="blog-title">${post.title}</h2>
+                        <p class="blog-excerpt">${post.excerpt}</p>
+                        <div class="blog-meta">
+                            <span>${post.date}</span>
+                            <span>${post.author}</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Function to render blog posts
+        function renderBlogPosts() {
+            const blogContainer = document.getElementById('blogContainer');
+            blogContainer.innerHTML = blogPosts.map(post => createBlogCard(post)).join('');
+        }
+
+        // Initialize the blog
+        document.addEventListener('DOMContentLoaded', renderBlogPosts);
+
+        // Add smooth scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                window.scrollTo({
+                    top: section ? section.offsetTop - 70 : 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
