@@ -1,0 +1,18 @@
+•	Linux/Unix: Master command line, shell scripting (Bash), and system administration.
+
+2. Linux/Unix Fundamentals (लिनक्स की बुनियाद)
+क्या सीखें?
+•	Command Line Basics: grep, awk, sed, find, ssh, file permissions (chmod, chown).
+•	Process Management: ps, top, kill, systemd.
+•	Networking Tools: curl, netstat, ping, nslookup.
+•	Package Managers: apt, yum, dnf.
+कैसे सीखें?
+•	Hands-On: अपने PC पर Virtual Machine (VM) में Linux (Ubuntu/CentOS) install करें।
+•	Course: Linux Journey (free)।
+•	Project: एक Bash script लिखें जो server के RAM और disk usage की report generate करे।
+________________________________________
+3. Version Control (Git)
+क्या सीखें?
+•	Git Basics: git clone, commit, push, pull, branch, merge, rebase.
+•	Collaboration: GitHub/GitLab पर repositories manage करना, Pull Requests, merge conflicts solve करना।
+•	Workflows: Git Flow, Trunk-Based Development।
