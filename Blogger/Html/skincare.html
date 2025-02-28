@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>चमकती त्वचा के टिप्स - ग्लोइंग स्किन गाइड</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff8f5;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #d37c7c;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #f8d0d0;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #bf5656;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: #fff;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 0.8rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d37c7c;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            margin-left: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover {
+            color: #d37c7c;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(255, 246, 246, 0.7), rgba(255, 225, 225, 0.7)), 
+                        url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            padding-top: 4rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background-color: #d37c7c;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .hero-btn:hover {
+            background-color: #bf5656;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(211, 124, 124, 0.4);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        /* Tips Cards */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tip-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tip-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .tip-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .tip-content {
+            padding: 1.5rem;
+        }
+
+        .tip-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #d37c7c;
+        }
+
+        .tip-card ul {
+            padding-left: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .tip-card li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Routine Steps */
+        .routine-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: #f8d0d0;
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: #f8d0d0;
+            color: #bf5656;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        /* Ingredients Section */
+        .ingredients-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        .ingredient-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .ingredient-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .ingredient-icon {
+            font-size: 2.5rem;
+            color: #d37c7c;
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 1000px;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: #d37c7c;
+            outline: none;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-button {
+            background-color: #d37c7c;
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-button:hover {
+            background-color: #bf5656;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 3rem 0;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            border-bottom: 2px solid #d37c7c;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .footer-links {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #d37c7c;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #444;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #d37c7c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 3rem;
+            border-top: 1px solid #444;
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #d37c7c;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 900;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero {
+                height: auto;
+                padding: 6rem 0 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">✨ <span>ग्लोइंग स्किन</span></a>
+            <div class="menu-toggle">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#tips">SkinCare Tips</a></li>
+                <li><a href="#routine">Daily routine</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#faq">Q & A</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>चमकती त्वचा पाने के लिए आसान उपाय</h1>
+            <p class="hero-subtitle">प्राकृतिक उपचार और दैनिक टिप्स से पाएं दमकती और स्वस्थ त्वचा</p>
+            <a href="#tips" class="hero-btn">T i p s</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <section id="tips" class="section">
+            <h2>चमकती त्वचा के असरदार टिप्स</h2>
+            <p>चेहरे की निखरी और चमकती त्वचा हर किसी का सपना होता है। लेकिन प्रदूषण, तनाव, गलत खानपान, और अनियमित दिनचर्या की वजह से त्वचा बेजान हो जाती है। अगर आप भी "हमेशा ग्लोइंग स्किन" चाहते हैं, तो ये आसान टिप्स अपनाएं:</p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="स्किनकेयर रूटीन" class="tip-img">
+                    <div class="tip-content">
+                        <h3 class="tip-title">डेली स्किनकेयर रूटीन</h3>
+                        <p>नियमित स्किनकेयर रूटीन अपनाकर आप अपनी त्वचा को स्वस्थ और चमकदार रख सकते हैं:</p>
+                        <ul>
+                            <li><strong>सफाई (Cleansing):</strong> रोज़ सुबह-शाम माइल्ड क्लींजर से चेहरा धोएं</li>
+                            <li><strong>टोनिंग (Toning):</strong> गुलाबजल या एलोवेरा जैसे प्राकृतिक टोनर का इस्तेमाल करें</li>
+                            <li><strong>मॉइस्चराइजिंग:</strong> त्वचा के प्रकार के अनुसार मॉइस्चराइजर लगाएं</li>
+                            <li><strong>सनस्क्रीन:</strong> SPF 30+ सनस्क्रीन ज़रूर लगाएं</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="घरेलू नुस्खे" class="tip-img">
+                    <div class="tip-content">
+                        <h3 class="tip-title">घरेलू नुस्खों का जादू</h3>
+                        <p>प्राकृतिक घरेलू फेस पैक त्वचा को पोषण देते हैं और ग्लो बढ़ाते हैं:</p>
+                        <ul>
+                            <li><strong>हल्दी और दही का पैक:</strong> दाग-धब्बे कम करता है और ग्लो बढ़ाता है</li>
+                            <li><strong>शहद और नींबू:</strong> त्वचा को मॉइस्चराइज और ब्राइट करता है</li>
+                            <li><strong>एलोवेरा जेल:</strong> त्वचा को ठंडक देता है और पिंपल्स से बचाता है</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="खानपान" class="tip-img">
+                    <div class="tip-content">
+                        <h3 class="tip-title">खानपान पर दें ध्यान</h3>
+                        <p>स्वस्थ खानपान से त्वचा अंदर से चमकती है:</p>
+                        <ul>
+                            <li><strong>पानी पिएं भरपूर:</strong> दिन में 8-10 गिलास पानी पिएं</li>
+                            <li><strong>विटामिन सी युक्त आहार:</strong> संतरा, आंवला, अमरूद खाएं</li>
+                            <li><strong>ड्राई फ्रूट्स और ओमेगा-3:</strong> बादाम, अखरोट स्किन के लिए फायदेमंद हैं</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tip-card">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="लाइफस्टाइल" class="tip-img">
+                    <div class="tip-content">
+                        <h3 class="tip-title">लाइफस्टाइल में करें बदलाव</h3>
+                        <p>स्वस्थ जीवनशैली अपनाकर त्वचा को बनाए रखें जवां:</p>
+                        <ul>
+                            <li><strong>नींद पूरी लें:</strong> रोज़ 7-8 घंटे की नींद ज़रूरी है</li>
+                            <li><strong>योग और एक्सरसाइज:</strong> रोज़ाना 30 मिनट व्यायाम करें</li>
+                            <li><strong>तनाव से दूर रहें:</strong> मेडिटेशन या संगीत से स्ट्रेस कम करें</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="routine" class="section">
+            <h2>दिनचर्या में शामिल करें ये स्टेप्स</h2>
+            <p>एक अच्छी स्किनकेयर दिनचर्या आपकी त्वचा को स्वस्थ और चमकदार बनाए रखने में मदद करती है। यहां एक आदर्श दिनचर्या के स्टेप्स दिए गए हैं:</p>
+            
+            <div class="routine-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>सुबह का रूटीन</h3>
+                    <p>धीरे से फेस वॉश करें, टोनर लगाएं, सीरम और मॉइस्चराइजर लगाकर SPF के साथ फिनिश करें।</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>दिन के दौरान</h3>
+                    <p>हर 2-3 घंटे में सनस्क्रीन दोबारा लगाएं और ढेर सारा पानी पिएं।</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>शाम का रूटीन</h3>
+                    <p>मेकअप हटाएं, फेस वॉश करें, और हल्का मॉइस्चराइजर लगाएं।</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>रात का रूटीन</h3>
+                    <p>अच्छे से क्लींजिंग करें, फेस पैक या सीरम लगाएं, और नाइट क्रीम से फिनिश करें।</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ingredients" class="section">
+            <h2>प्राकृतिक सामग्री जो दें चमकदार त्वचा</h2>
+            <p>प्रकृति ने हमें कई ऐसी चीजें दी हैं जो त्वचा को पोषण देती हैं और उसे चमकदार बनाती हैं। यहां कुछ प्राकृतिक सामग्री दी गई हैं जिन्हें आप अपने स्किनकेयर रूटीन में शामिल कर सकते हैं:</p>
+            
+            <div class="ingredients-container">
+                <div class="ingredient-list">
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🍯</div>
+                        <h3>शहद</h3>
+                        <p>प्राकृतिक मॉइस्चराइजर</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🥥</div>
+                        <h3>नारियल तेल</h3>
+                        <p>पोषक और मॉइस्चराइजिंग</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🍋</div>
+                        <h3>नींबू</h3>
+                        <p>विटामिन सी से भरपूर</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🥛</div>
+                        <h3>दही</h3>
+                        <p>त्वचा के लिए बेहतरीन</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🧄</div>
+                        <h3>हल्दी</h3>
+                        <p>एंटी-इंफ्लेमेटरी गुण</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🌿</div>
+                        <h3>एलोवेरा</h3>
+                        <p>शांत और ठंडक प्रदान करे</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🌹</div>
+                        <h3>गुलाब जल</h3>
+                        <p>प्राकृतिक टोनर</p>
+                    </div>
+                    
+                    <div class="ingredient-item">
+                        <div class="ingredient-icon">🍃</div>
+                        <h3>नीम</h3>
+                        <p>एंटी-बैक्टीरियल गुण</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="section">
+            <h2>अक्सर पूछे जाने वाले सवाल</h2>
+            <p>यहां कुछ सामान्य प्रश्नों के उत्तर दिए गए हैं जो लोग अक्सर स्किनकेयर के बारे में पूछते हैं:</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        मेरी त्वचा के लिए कौन सा मॉइस्चराइजर सबसे अच्छा है?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>यह आपकी त्वचा के प्रकार पर निर्भर करता है। ऑयली स्किन के लिए वॉटर-बेस्ड या जेल-बेस्ड मॉइस्चराइजर अच्छा होता है, जबकि ड्राई स्किन के लिए क्रीम-बेस्ड या ऑयल-बेस्ड मॉइस्चराइजर बेहतर होता है। कॉम्बिनेशन स्किन के लिए दोनों का मिश्रण या अलग-अलग क्षेत्रों के लिए अलग-                        अलग मॉइस्चराइजर इस्तेमाल कर सकते हैं।</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        क्या मुझे रोजाना सनस्क्रीन लगाना चाहिए?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>हां, रोजाना सनस्क्रीन लगाना बहुत जरूरी है। यह त्वचा को यूवी किरणों से बचाता है और समय से पहले बुढ़ापा आने से रोकता है।</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        क्या प्राकृतिक उत्पाद त्वचा के लिए सुरक्षित हैं?
+                        <span class="faq-question">
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>हां, प्राकृतिक उत्पाद आमतौर पर सुरक्षित होते हैं, लेकिन हर किसी की त्वचा अलग होती है। किसी भी नए उत्पाद का इस्तेमाल करने से पहले पैच टेस्ट जरूर करें।</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        त्वचा की चमक बढ़ाने के लिए क्या करें?
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>त्वचा की चमक बढ़ाने के लिए नियमित स्किनकेयर रूटीन, स्वस्थ आहार, पर्याप्त पानी पीना और तनाव से दूर रहना जरूरी है।</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>संपर्क करें</h2>
+            <p>अगर आपके पास कोई सवाल या सुझाव है, तो हमसे संपर्क करने में संकोच न करें।</p>
+            
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name" class="form-label">नाम</label>
+                        <input type="text" id="name" name="name" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">ईमेल</label>
+                        <input type="email" id="email" name="email" class="form-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">संदेश</label>
+                        <textarea id="message" name="message" class="form-textarea" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" class="form-button">भेजें</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ग्लोइंग स्किन</h3>
+                <p>प्राकृतिक उपचार और स्किनकेयर टिप्स से पाएं दमकती त्वचा।</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>लिंक</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">होम</a></li>
+                    <li><a href="#tips">टिप्स</a></li>
+                    <li><a href="#routine">दिनचर्या</a></li>
+                    <li><a href="#ingredients">सामग्री</a></li>
+                    <li><a href="#faq">सवाल-जवाब</a></li>
+                    <li><a href="#contact">संपर्क</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>सोशल मीडिया</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="YouTube">📺</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2025 ग्लोइंग स्किन. सभी अधिकार सुरक्षित।</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="back-to-top">↑</a>
+
+    <!-- JavaScript for Interactive Elements -->
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Menu Toggle for Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // FAQ Toggle
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
