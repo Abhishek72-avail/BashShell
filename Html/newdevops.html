@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Career Roadmap</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #1ca4da, #fc2525);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #2575fc;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    h3 {
+      color: #6a11cb;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .timeline-item {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background: #6a11cb;
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+    .responsive-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    .responsive-table th,
+    .responsive-table td {
+      border: 1px solid #ddd;
+      padding: 0.8rem;
+      text-align: left;
+    }
+    .responsive-table th {
+      background-color: #6a11cb;
+      color: white;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .faq-section {
+      margin-top: 3rem;
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+    }
+    .faq-question {
+      font-weight: bold;
+      color: #6a11cb;
+    }
+    .faq-answer {
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.2rem;
+      }
+      .container {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>DevOps Career Roadmap</h1>
+    <p>Complete Journey from Beginner to Expert</p>
+  </header>
+
+  <div class="container">
+    <!-- Introduction -->
+    <section>
+      <h2>Introduction</h2>
+      <p>Hello friends! Today we will talk about DevOps - a rapidly evolving field that is in high demand in the IT industry. Are you a beginner looking to build a career in DevOps? Or are you an experienced IT professional looking to upgrade your skills? In this blog, I will share a comprehensive DevOps roadmap that will help you progress from beginner to expert level.</p>
+    </section>
+
+    <!-- What is DevOps? -->
+    <section>
+      <h2>What is DevOps?</h2>
+      <p>DevOps is a combination of "Development" and "Operations" - it's a methodology that bridges the gap between software development and IT operations teams. DevOps is a culture, philosophy, and set of practices that improves the speed and quality of software development.</p>
+    </section>
+
+    <!-- Why Choose DevOps -->
+    <section>
+      <h2>Why Choose a DevOps Career?</h2>
+      <p>The average annual salary for DevOps specialists in 2025 ranges from ₹8-20 lakhs in India and $120,000-$150,000 in the United States. Companies are looking for DevOps professionals to accelerate their digital transformation. Here are some reasons why DevOps is an attractive career option:</p>
+      <ul>
+        <li><strong>High Demand</strong>: Professionals with DevOps skills are in massive demand worldwide</li>
+        <li><strong>Better Salary</strong>: DevOps engineers receive higher salaries compared to other IT roles</li>
+        <li><strong>Diverse Opportunities</strong>: From startups to large tech companies, DevOps is needed everywhere</li>
+        <li><strong>Technical Growth</strong>: You will continuously work with new technologies and tools</li>
+      </ul>
+    </section>
+
+    <!-- Roadmap -->
+    <section>
+      <h2>Roadmap</h2>
+      <p>Now, let's go through the step-by-step DevOps roadmap.</p>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Step 1: Foundation Skills (0-6 Months)</h3>
+          
+          <h4>Operating System Understanding</h4>
+          <ul>
+            <li><strong>Linux</strong>: Most servers run on Linux, so it's essential to be comfortable with command line, shell scripting, and file systems</li>
+            <li><strong>Key Commands</strong>: <code>grep</code>, <code>find</code>, <code>awk</code>, <code>sed</code>, <code>lsof</code>, <code>curl</code>, <code>wget</code>, <code>tail</code>, <code>head</code>, <code>less</code>, <code>vim</code>, <code>tar</code></li>
+            <li><strong>Process Management</strong>: <code>ps</code>, <code>top</code>, <code>htop</code>, <code>lsof</code>, <code>kill</code>, <code>killall</code>, <code>systemd/systemctl</code></li>
+          </ul>
+          
+          <h4>Networking Basics</h4>
+          <ul>
+            <li><strong>TCP/IP</strong>: DNS, HTTP/HTTPS, SSL/TLS, SSH, Port Forwarding</li>
+            <li><strong>Connectivity Tools</strong>: <code>ping</code>, <code>traceroute</code>, <code>nslookup</code>, <code>dig</code>, <code>netstat</code>, <code>tcpdump</code></li>
+            <li><strong>Firewall Basics</strong>: iptables, UFW</li>
+          </ul>
+          
+          <h4>Programming Skills</h4>
+          <ul>
+            <li><strong>Learn a Scripting Language</strong>: Python, Bash, or Ruby</li>
+            <li><strong>Basic Algorithms and Data Structures</strong></li>
+            <li><strong>Regular Expressions (RegEx)</strong></li>
+          </ul>
+          
+          <!-- <img src="https://i.postimg.cc/B666pvHJ/1-1.webp" alt="Foundation Skills"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 2: Organized Development (3-9 Months)</h3>
+          
+          <h4>Version Control Systems</h4>
+          <ul>
+            <li><strong>Git</strong>: Repositories, branching, merging, pulling/pushing, conflict resolution</li>
+            <li><strong>GitHub/GitLab/Bitbucket</strong>: Project management, issue tracking, pull requests</li>
+            <li><strong>GitOps</strong>: Configuration management, CD pipelines</li>
+          </ul>
+          
+          <h4>Containerization</h4>
+          <ul>
+            <li><strong>Docker</strong>: Images, containers, volumes, docker-compose</li>
+            <li><strong>Dockerfiles</strong>: Building and optimizing your Docker images</li>
+          </ul>
+          
+          <h4>CI/CD Pipelines</h4>
+          <ul>
+            <li><strong>Jenkins</strong>: Basic pipeline setup, Jenkinsfile</li>
+            <li><strong>GitLab CI/CD</strong>: Pipeline configuration, automation</li>
+            <li><strong>GitHub Actions</strong>: Workflows, integration</li>
+          </ul>
+          
+          <!-- <img src="https://i.postimg.cc/B666pvHJ/1-1.webp" alt="Organized Development"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 3: Infrastructure as Code (IaC) and Orchestration (6-12 Months)</h3>
+          
+          <h4>Configuration Management</h4>
+          <ul>
+            <li><strong>Ansible</strong>: Playbooks, roles, inventory, modules</li>
+            <li><strong>Puppet/Chef</strong>: Basic workflow and configuration</li>
+          </ul>
+          
+          <h4>Infrastructure Provisioning</h4>
+          <ul>
+            <li><strong>Terraform</strong>: Providers, modules, state management</li>
+            <li><strong>AWS CloudFormation / Azure ARM Templates</strong>: Writing templates, stacks</li>
+          </ul>
+          
+          <h4>Container Orchestration</h4>
+          <ul>
+            <li><strong>Kubernetes</strong>: Pods, services, deployments, namespaces</li>
+            <li><strong>Helm</strong>: Charts, releases, repositories</li>
+            <li><strong>Service Mesh (Istio/Linkerd)</strong>: Traffic management, security</li>
+          </ul>
+          
+          <!-- <img src="https://i.postimg.cc/B666pvHJ/1-1.webp" alt="Infrastructure as Code"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 4: Cloud Platforms (9-15 Months)</h3>
+          <p>Focus on one cloud platform and then learn others:</p>
+          
+          <h4>AWS</h4>
+          <ul>
+            <li><strong>Core Services</strong>: EC2, S3, RDS, VPC, IAM, ECS, EKS</li>
+            <li><strong>Management Tools</strong>: CloudWatch, CloudTrail</li>
+            <li><strong>Certification</strong>: AWS Certified DevOps Engineer</li>
+          </ul>
+          
+          <h4>Microsoft Azure</h4>
+          <ul>
+            <li><strong>Core Services</strong>: Virtual Machines, App Service, Azure SQL, VNET</li>
+            <li><strong>Container Services</strong>: AKS, Container Instances</li>
+            <li><strong>Certification</strong>: Azure DevOps Engineer Expert</li>
+          </ul>
+          
+          <h4>Google Cloud Platform (GCP)</h4>
+          <ul>
+            <li><strong>Core Services</strong>: Compute Engine, Cloud Storage, Cloud SQL</li>
+            <li><strong>Container Services</strong>: GKE, Cloud Run</li>
+            <li><strong>Certification</strong>: Professional Cloud DevOps Engineer</li>
+          </ul>
+          
+          <!-- <img src="https://i.postimg.cc/kgTFg2Jm/2.webp" alt="Cloud Platforms"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 5: Monitoring and Logging (12-18 Months)</h3>
+          
+          <h4>Monitoring Tools</h4>
+          <ul>
+            <li><strong>Prometheus</strong>: Metrics collection, query language (PromQL)</li>
+            <li><strong>Grafana</strong>: Dashboards, alerts, visualization</li>
+            <li><strong>Datadog/New Relic</strong>: Application Performance Monitoring (APM)</li>
+          </ul>
+          
+          <h4>Logging Solutions</h4>
+          <ul>
+            <li><strong>ELK Stack</strong>: Elasticsearch, Logstash, Kibana</li>
+            <li><strong>Fluentd/Fluent Bit</strong>: Log collection and forwarding</li>
+            <li><strong>Loki</strong>: Integrated with Prometheus</li>
+          </ul>
+          
+          <h4>Alerting and Incident Management</h4>
+          <ul>
+            <li><strong>PagerDuty/OpsGenie</strong>: On-call scheduling, alerts</li>
+            <li><strong>Incident Response Planning</strong></li>
+          </ul>
+          
+          <!-- <img src="https://via.placeholder.com/800x400" alt="Monitoring and Logging"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 6: Security and DevSecOps (15-24 Months)</h3>
+          
+          <h4>Security Practices</h4>
+          <ul>
+            <li><strong>SAST/DAST</strong> (Static/Dynamic Application Security Testing)</li>
+            <li><strong>Security Scanning</strong>: Trivy, Clair, SonarQube</li>
+            <li><strong>Secret Management</strong>: HashiCorp Vault, AWS Secrets Manager</li>
+          </ul>
+          
+          <h4>Compliance Automation</h4>
+          <ul>
+            <li><strong>Policy as Code</strong>: OPA (Open Policy Agent)</li>
+            <li><strong>Compliance Frameworks</strong>: CIS Benchmarks, NIST</li>
+          </ul>
+          
+          <h4>Network Security</h4>
+          <ul>
+            <li><strong>Web Application Firewalls</strong> (WAF)</li>
+            <li><strong>Microservice Security</strong>: mTLS, service mesh</li>
+          </ul>
+          
+          <!-- <img src="https://via.placeholder.com/800x400" alt="Security and DevSecOps"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 7: Advanced DevOps Practices (18-30 Months)</h3>
+          
+          <h4>Microservices Architecture</h4>
+          <ul>
+            <li><strong>Design Patterns</strong>: Circuit Breaker, Saga, CQRS</li>
+            <li><strong>API Gateways</strong>: Kong, Amazon API Gateway, Apigee</li>
+          </ul>
+          
+          <h4>Database & Storage DevOps</h4>
+          <ul>
+            <li><strong>Database Migration Tools</strong>: Flyway, Liquibase</li>
+            <li><strong>Database Automation and Versioning</strong></li>
+          </ul>
+          
+          <h4>Chaos Engineering</h4>
+          <ul>
+            <li><strong>Principles and Tools</strong>: Chaos Monkey, Gremlin</li>
+            <li><strong>Resilience Testing</strong></li>
+          </ul>
+          
+          <!-- <img src="https://via.placeholder.com/800x400" alt="Advanced DevOps Practices"> -->
+        </div>
+        
+        <div class="timeline-item">
+          <h3>Step 8: Expertise and Optimization (24+ Months)</h3>
+          
+          <h4>Performance Optimization</h4>
+          <ul>
+            <li><strong>Load Testing</strong>: JMeter, k6, Gatling</li>
+            <li><strong>Cloud Cost Optimization</strong></li>
+          </ul>
+          
+          <h4>Platform Engineering</h4>
+          <ul>
+            <li><strong>Internal Developer Platform</strong> (IDP) Building</li>
+            <li><strong>Self-service Tools</strong>: Backstage.io</li>
+          </ul>
+          
+          <h4>Advanced Automation</h4>
+          <ul>
+            <li><strong>GitOps</strong>: Argo CD, Flux CD</li>
+            <li><strong>MLOps</strong>: Machine Learning Pipelines</li>
+          </ul>
+          
+          <!-- <img src="https://via.placeholder.com/800x400" alt="Expertise and Optimization"> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources -->
+    <section>
+      <h2>Top Resources to Learn DevOps</h2>
+      
+      <h4>Online Courses</h4>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Course Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Udemy</td>
+            <td>Docker and Kubernetes: The Complete Guide</td>
+            <td>Comprehensive guide to containerization</td>
+          </tr>
+          <tr>
+            <td>Coursera</td>
+            <td>DevOps on AWS Specialization</td>
+            <td>Learn DevOps practices on AWS platform</td>
+          </tr>
+          <tr>
+            <td>A Cloud Guru</td>
+            <td>DevOps Essentials</td>
+            <td>Covers fundamental DevOps concepts</td>
+          </tr>
+          <tr>
+            <td>LinkedIn Learning</td>
+            <td>Becoming a DevOps Engineer</td>
+            <td>Career-focused DevOps learning path</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h4>Practice Platforms</h4>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>KodeKloud</td>
+            <td>Hands-on DevOps practice labs</td>
+          </tr>
+          <tr>
+            <td>Katacoda</td>
+            <td>Interactive learning for DevOps</td>
+          </tr>
+          <tr>
+            <td>Qwiklabs</td>
+            <td>Hands-on labs on Google Cloud</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <h4>Communities and Blogs</h4>
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Resource</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>DevOps.com</td>
+            <td>News and articles on DevOps</td>
+          </tr>
+          <tr>
+            <td>The DevOps Handbook (Gene Kim, Jez Humble)</td>
+            <td>Essential book for DevOps practitioners</td>
+          </tr>
+          <tr>
+            <td>Reddit r/devops</td>
+            <td>Active DevOps community discussions</td>
+          </tr>
+          <tr>
+            <td>Medium DevOps Topic</td>
+            <td>Articles from DevOps practitioners</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Conclusion -->
+    <section>
+      <h2>Conclusion</h2>
+      <p>DevOps is a journey, not a destination. This roadmap will help you get started and move forward, but remember that every company's DevOps implementation is different. Continuously update your knowledge and stay familiar with new technologies.</p>
+      <p>You can customize this roadmap based on your interests and projects. Are you more interested in cloud-native applications? Then focus more on Kubernetes and service mesh. Interested in security? Move toward DevSecOps.</p>
+      <p>I hope this roadmap will be helpful in your DevOps career. If you have any questions or need more information on specific topics, please let me know in the comments section!</p>
+    </section>
+
+    <!-- FAQs -->
+    <section class="faq-section">
+      <h2>Frequently Asked Questions (FAQs)</h2>
+      
+      <div class="faq-item">
+        <p class="faq-question">1. How long does it take to become a DevOps Engineer?</p>
+        <p class="faq-answer">It typically takes 1-2 years to become a beginner to mid-level DevOps Engineer, while reaching a senior level may take 3-5 years.</p>
+      </div>
+      
+      <div class="faq-item">
+        <p class="faq-question">2. Do I need to know programming for DevOps?</p>
+        <p class="faq-answer">Yes, having a good understanding of at least one scripting language (Python, Bash, or Ruby) is essential.</p>
+      </div>
+      
+      <div class="faq-item">
+        <p class="faq-question">3. What is the difference between DevOps and SRE (Site Reliability Engineering)?</p>
+        <p class="faq-answer">DevOps is a philosophy and set of practices, while SRE is Google's approach to implementing it. SRE is more engineering-focused and places greater emphasis on reliability.</p>
+      </div>
+      
+      <div class="faq-item">
+        <p class="faq-question">4. What are the most important skills in DevOps?</p>
+        <p class="faq-answer">Besides technical skills, problem-solving, communication, and teamwork are extremely important.</p>
+      </div>
+      
+      <div class="faq-item">
+        <p class="faq-question">5. Is a computer science degree necessary to become a DevOps Engineer?</p>
+        <p class="faq-answer">No, but it helps. Many DevOps Engineers come from IT, system administration, or development backgrounds.</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    // Add any interactive features here if needed
+  </script>
+</body>
+</html>

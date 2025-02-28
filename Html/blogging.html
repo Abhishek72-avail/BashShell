@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinimalBlog - A Modern Blogger Theme</title>
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --text-color: #333;
+            --bg-color: #fff;
+            --card-bg: #f9f9f9;
+            --accent-color: #6c63ff;
+            --border-color: #eaeaea;
+            --footer-bg: #f5f5f5;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary-color: #75a1de;
+            --secondary-color: #5092b9;
+            --text-color: #f5f5f5;
+            --bg-color: #1a1a1a;
+            --card-bg: #252525;
+            --accent-color: #8983ff;
+            --border-color: #3a3a3a;
+            --footer-bg: #252525;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            transition: var(--transition);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* ===== HEADER STYLES ===== */
+        header {
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            background-color: var(--bg-color);
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        /* Navigation */
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            position: relative;
+            font-weight: 500;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: var(--bg-color);
+            box-shadow: var(--shadow);
+            min-width: 200px;
+            border-radius: 4px;
+            display: none;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--text-color);
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--card-bg);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Dark Mode Toggle and Search */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.3rem;
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.3rem;
+        }
+
+        .search-form {
+            position: absolute;
+            right: 0;
+            top: 120%;
+            width: 300px;
+            display: none;
+            background-color: var(--bg-color);
+            padding: 1rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            z-index: 1;
+        }
+
+        .search-form.active {
+            display: block;
+        }
+
+        .search-form input {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            padding: 2rem 0;
+        }
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        /* Featured Post */
+        .featured-post {
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background-color: var(--card-bg);
+        }
+
+        .featured-post-img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .featured-post-content {
+            padding: 1.5rem;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .featured-post h2 {
+            margin-bottom: 1rem;
+        }
+
+        .featured-post p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Post Grid */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background-color: var(--card-bg);
+            transition: var(--transition);
+        }
+
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .post-card-content {
+            padding: 1rem;
+        }
+
+        .post-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .post-card p {
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        /* Single Post Page */
+        .single-post {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .post-header {
+            margin-bottom: 2rem;
+        }
+
+        .post-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.2rem;
+        }
+
+        .post-content {
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content img {
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .post-content h2, .post-content h3 {
+            margin: 2rem 0 1rem;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .post-tags a {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .post-tags a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .share-post {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .share-post h3 {
+            margin-bottom: 1rem;
+        }
+
+        .social-share {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-share a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-share a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Comments Section */
+        .comments-section {
+            margin-top: 3rem;
+        }
+
+        .comments-section h3 {
+            margin-bottom: 1.5rem;
+        }
+
+        .comment {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .comment-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .comment-content {
+            flex: 1;
+        }
+
+        .comment-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+
+        .comment-body {
+            line-height: 1.6;
+        }
+
+        .comment-form {
+            margin-top: 2rem;
+        }
+
+        .comment-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* ===== SIDEBAR STYLES ===== */
+        .sidebar {
+            position: sticky;
+            top: 6rem;
+            height: max-content;
+        }
+
+        .widget {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .widget h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .widget h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        /* About Widget */
+        .about-widget {
+            text-align: center;
+        }
+
+        .about-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            object-fit: cover;
+        }
+
+        .about-widget p {
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        /* Search Widget */
+        .search-widget form {
+            display: flex;
+        }
+
+        .search-widget input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px 0 0 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .search-widget button {
+            padding: 0.5rem 1rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Categories Widget */
+        .categories-widget ul {
+            list-style: none;
+        }
+
+        .categories-widget li {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .categories-widget li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .categories-widget a {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .categories-widget .count {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.1rem 0.5rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* Recent Posts Widget */
+        .recent-posts-widget .recent-post {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .recent-posts-widget .recent-post:last-child {
+            margin-bottom: 0;
+        }
+
+        .recent-post-img {
+            width: 80px;
+            height: 60px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .recent-post-info h4 {
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .recent-post-info .date {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+        }
+
+        /* Subscribe Widget */
+        .subscribe-widget p {
+            margin-bottom: 1rem;
+        }
+
+        .subscribe-widget form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .subscribe-widget input {
+            padding: 0.8rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* ===== FOOTER STYLES ===== */
+        footer {
+            background-color: var(--footer-bg);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-widget h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-widget h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+
+        .footer-widget p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-color);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-social .social-links {
+            justify-content: flex-start;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+                margin-top: 2rem;
+            }
+
+            .sidebar .widget {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: var(--bg-color);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+                transition: var(--transition);
+                z-index: 1001;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                display: none;
+                padding-left: 1rem;
+                margin-top: 0.5rem;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .close-nav {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: transparent;
+                border: none;
+                font-size: 1.5rem;
+                color: var(--text-color);
+                cursor: pointer;
+            }
+
+            .featured-post-img {
+                height: 250px;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .post-title {
+                font-size: 2rem;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .search-form {
+                width: 100%;
+                min-width: 250px;
+            }
+
+            .post-header {
+                margin-bottom: 1.5rem;
+            }
+
+            .post-title {
+                font-size: 1.8rem;
+            }
+
+            .post-content {
+                font-size: 0.95rem;
+            }
+
+            .comment {
+                flex-direction: column;
+            }
+
+            .comment-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">Minimal<span>Blog</span></a>
+            
+            <button class="nav-toggle" id="navToggle">
+                <i class="fas fa-bars">☰</i>
+            </button>
+            
+            <nav id="nav">
+                <button class="close-nav" id="closeNav">
+                    <i class="fas fa-times">✕</i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Categories</a>
+                        <div class="dropdown-content">
+                            <a href="#">Technology</a>
+                            <a href="#">Lifestyle</a>
+                            <a href="#">Travel</a>
+                            <a href="#">Food</a>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon">🌙</i>
+                </button>
+                
+                <div class="search-container">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search">🔍</i>
+                    </button>
+                    <form class="search-form" id="searchForm">
+                        <input type="text" placeholder="Search...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="container main-container">
+            <!-- Blog Posts Section -->
+            <div class="content">
+                <!-- Featured Post -->
+                <article class="featured-post">
+                    <img src="/api/placeholder/800/400" alt="Featured post" class="featured-post-img">
+                    <div class="featured-post-content">
+                        <div class="post-meta">
+                            <span class="date">February 22, 2025</span>
+                            <span class="category">Technology</span>
+                        </div>
+                        <h2><a href="single-post.html">The Future of Web Development in 2025</a></h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <a href="single-post.html" class="btn">Read More</a>
+                    </div>
+                </article>
+
+                <!-- Post Grid -->
+                <div class="posts-grid">
+                    <!-- Post Card 1 -->
+                    <article class="post-card">
+                        <img src="/api/placeholder/400/300" alt="Post 1" class="post-card-img">
+                        <div class="post-card-content">
+                            <div class="post-meta">
+                                <span class="date">February 20, 2025</span>
+                            </div>
+                            <h3><a href="single-post.html">10 Tips for Responsive Web Design</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="single-post.html" class="btn">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 2 -->
+                    <article class="post-card">
+                        <img src="/api/placeholder/400/300" alt="Post 2" class="post-card-img">
+                        <div class="post-card-content">
+                            <div class="post-meta">
+                                <span class="date">February 18, 2025</span>
+                            </div>
+                            <h3><a href="single-post.html">How to Optimize Your Website for Speed</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="single-post.html" class="btn">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 3 -->
+                    <article class="post-card">
+                        <img src="/api/placeholder/400/300" alt="Post 3" class="post-card-img">
+                        <div class="post-card-content">
+                            <div class="post-meta">
+                                <span class="date">February 15, 2025</span>
+                            </div>
+                            <h3><a href="single-post.html">The Rise of Artificial Intelligence in Web Design</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="single-post.html" class="btn">Read More</a>
+                        </div>
+                    </article>
+
+                    <!-- Post Card 4 -->
+                    <article class="post-card">
+                        <img src="/api/placeholder/400/300" alt="Post 4" class="post-card-img">
+                        <div class="post-card-content">
+                            <div class="post-meta">
+                                <span class="date">February 12, 2025</span>
+                            </div>
+                            <h3><a href="single-post.html">Essential JavaScript Libraries for Modern Websites</a></h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="single-post.html" class="btn">Read More</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More Button -->
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn">Load More</button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <!-- About Widget -->
+                <div class="widget about-widget">
+                    <img src="/api/placeholder/240/240" alt="Author" class="about-img">
+                    <h3>About Me</h3>
+                    <p>Hello! I'm Alex, a tech enthusiast and content creator. I write about web development, design, and the latest tech trends.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f">f</i></a>
+                        <a href="#"><i class="fab fa-twitter">t</i></a>
+                        <a href="#"><i class="fab fa-instagram">i</i></a>
+                        <a href="#"><i class="fab fa-linkedin-in">in</i></a>
+                    </div>
+                </div>
+
+                <!-- Search Widget -->
+                <div class="widget search-widget">
+                    <h3>Search</h3>
+                    <form>
+                        <input type="text" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search">🔍</i></button>
+                    </form>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="widget categories-widget">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Technology <span class="count">15</span></a></li>
+                        <li><a href="#">Web Design <span class="count">8</span></a></li>
+                        <li><a href="#">Programming <span class="count">12</span></a></li>
+                        <li><a href="#">UX/UI <span class="count">6</span></a></li>
+                        <li><a href="#">Tutorials <span class="count">10</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Recent Posts Widget -->
+                <div class="widget recent-posts-widget">
+                    <h3>Recent Posts</h3>
+                    <div class="recent-post">
+                        <img src="/api/placeholder/80/60" alt="Recent post" class="recent-post-img">
+                        <div class="recent-post-info">
+                            <h4><a href="single-post.html">The Future of Web Development in 2025</a></h4>
+                            <span class="date">February 22, 2025</span>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <img src="/api/placeholder/80/60" alt="Recent post" class="recent-post-img">
+                        <div class="recent-post-info">
+                            <h4><a href="single-post.html">10 Tips for Responsive Web Design</a></h4>
+                            <span class="date">February 20, 2025</span>
+                        </div>
+                    </div>
+                    <div class="recent-post">
+                        <img src="/api/placeholder/80/60" alt="Recent post" class="recent-post-img">
+                        <div class="recent-post-info">
+                            <h4><a href="single-post.html">How to Optimize Your Website for Speed</a></h4>
+                            <!-- Add this right before closing </body> tag -->
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-widget">
+                <h3>About MinimalBlog</h3>
+                <p>A modern blogging platform focused on clean design and user experience. Share your stories with the world in a minimalistic way.</p>
+            </div>
+            
+            <div class="footer-widget">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-widget footer-social">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f">f</i></a>
+                    <a href="#"><i class="fab fa-twitter">t</i></a>
+                    <a href="#"><i class="fab fa-instagram">i</i></a>
+                    <a href="#"><i class="fab fa-linkedin-in">in</i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 MinimalBlog. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const navToggle = document.getElementById('navToggle');
+        const closeNav = document.getElementById('closeNav');
+        const nav = document.getElementById('nav');
+        const dropdowns = document.querySelectorAll('.dropdown');
+
+        navToggle.addEventListener('click', () => {
+            nav.classList.add('active');
+        });
+
+        closeNav.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+
+        // Dropdown Handling on Mobile
+        dropdowns.forEach(dropdown => {
+            const link = dropdown.querySelector('a');
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth < 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        // Check localStorage for theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            body.setAttribute('data-theme', currentTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+            themeToggle.innerHTML = isDark ? '🌙' : '☀️';
+        });
+
+        // Search Toggle
+        const searchBtn = document.getElementById('searchBtn');
+        const searchForm = document.getElementById('searchForm');
+
+        searchBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            searchForm.classList.toggle('active');
+        });
+
+        // Close search when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchBtn.contains(e.target) && !searchForm.contains(e.target)) {
+                searchForm.classList.remove('active');
+            }
+        });
+
+        // Load More Button (Example functionality)
+        document.querySelector('.btn').addEventListener('click', () => {
+            alert('Load more functionality would go here!');
+        });
+    </script>
+</body>
+</html>
