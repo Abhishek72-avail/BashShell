@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Fundamentals for DevOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #c0941b;
+            --secondary-color: #e74c3c;
+            --text-color: #333;
+            --light-gray: #f5f5f5;
+            --dark-gray: #95a5a6;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-gray);
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .hero-text {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0 1rem 0;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+            color: var(--primary-color);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .main-content {
+            background-color: var(--white);
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-icon {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style-type: none;
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -1rem;
+        }
+
+        .key-skills, .key-tools, .key-directories, .key-concepts, .key-practices {
+            background-color: rgba(231, 76, 60, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin: 1rem 0;
+        }
+
+        .code {
+            font-family: monospace;
+            background-color: var(--light-gray);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: var(--dark-gray);
+            margin: 2rem 0;
+            width: 100%;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media screen and (min-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+
+            .hero {
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 2rem;
+            }
+
+            .hero-text {
+                text-align: left;
+                flex: 1;
+            }
+
+            .hero-image {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Linux Fundamentals for DevOps</h1>
+            <p>Master the essential Linux skills needed for modern DevOps roles</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <div class="hero-text">
+                <h2>Why Linux Matters in DevOps</h2>
+                <p>Mastering Linux fundamentals is critical for DevOps because Linux is the backbone of most infrastructure, cloud platforms, and DevOps tools. This guide provides a structured breakdown of key Linux concepts to focus on.</p>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/pLtpHnZk/image-600x400.png" alt="Linux and DevOps Integration" />
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <!-- Section 1 -->
+            <div class="section" id="command-line">
+                <div class="section-header">
+                    <span class="section-icon">⌨️</span>
+                    <h2>1. Command-Line Proficiency</h2>
+                </div>
+                <p><strong>Why:</strong> DevOps workflows rely heavily on the terminal for automation, scripting, and server management.</p>
+                <div class="key-skills">
+                    <h3>Key Skills:</h3>
+                    <ul>
+                        <li>Navigate directories (<span class="code">cd</span>, <span class="code">ls</span>, <span class="code">pwd</span>)</li>
+                        <li>File operations (<span class="code">cp</span>, <span class="code">mv</span>, <span class="code">rm</span>, <span class="code">tar</span>)</li>
+                        <li>Text manipulation (<span class="code">grep</span>, <span class="code">awk</span>, <span class="code">sed</span>, <span class="code">cat</span>, <span class="code">less</span>)</li>
+                        <li>Process monitoring (<span class="code">ps</span>, <span class="code">top</span>, <span class="code">htop</span>, <span class="code">kill</span>)</li>
+                        <li>Text editors (<span class="code">vim</span>, <span class="code">nano</span>)</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/Wb921W09/image-600x300.png" alt="Linux Command Line Interface" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 2 -->
+            <div class="section" id="shell-scripting">
+                <div class="section-header">
+                    <span class="section-icon">📜</span>
+                    <h2>2. Shell Scripting</h2>
+                </div>
+                <p><strong>Why:</strong> Automate repetitive tasks (e.g., backups, deployments, log parsing).</p>
+                <div class="key-skills">
+                    <h3>Key Skills:</h3>
+                    <ul>
+                        <li>Write Bash scripts with variables, loops, conditionals, and functions</li>
+                        <li>Handle input/output redirection (<span class="code">></span>, <span class="code">>></span>, <span class="code">|</span>)</li>
+                        <li>Use exit codes and error handling (<span class="code">$?</span>, <span class="code">set -e</span>)</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/HxP2xCsY/image-600x300-2.png" alt="Shell Scripting Example" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 3 -->
+            <div class="section" id="file-system">
+                <div class="section-header">
+                    <span class="section-icon">📁</span>
+                    <h2>3. File System Hierarchy</h2>
+                </div>
+                <p><strong>Why:</strong> Know where critical files reside (configs, logs, binaries).</p>
+                <div class="key-directories">
+                    <h3>Key Directories:</h3>
+                    <ul>
+                        <li><span class="code">/etc</span>: Configuration files</li>
+                        <li><span class="code">/var/log</span>: Log files</li>
+                        <li><span class="code">/bin</span>, <span class="code">/usr/bin</span>: Essential binaries</li>
+                        <li><span class="code">/home</span>: User directories</li>
+                        <li><span class="code">/tmp</span>: Temporary files</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/ZKXMH6mb/image-600x300-1.png" alt="Linux File System Hierarchy" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 4 -->
+            <div class="section" id="permissions">
+                <div class="section-header">
+                    <span class="section-icon">🔒</span>
+                    <h2>4. Permissions & Ownership</h2>
+                </div>
+                <p><strong>Why:</strong> Security and access control are vital in shared environments.</p>
+                <div class="key-tools">
+                    <h3>Key Tools:</h3>
+                    <ul>
+                        <li><span class="code">chmod</span>: Change file permissions (read/write/execute)</li>
+                        <li><span class="code">chown</span>: Change file ownership</li>
+                        <li><span class="code">sudo</span>: Execute commands with elevated privileges</li>
+                        <li>Understand <span class="code">umask</span> for default permissions</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="https://i.postimg.cc/tT7cDksg/image-600x300-3.png" alt="Linux Permissions Diagram" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 5 -->
+            <div class="section" id="package-management">
+                <div class="section-header">
+                    <span class="section-icon">📦</span>
+                    <h2>5. Package Management</h2>
+                </div>
+                <p><strong>Why:</strong> Install/update software and dependencies.</p>
+                <div class="key-tools">
+                    <h3>Key Tools:</h3>
+                    <ul>
+                        <li>Debian/Ubuntu: <span class="code">apt</span>, <span class="code">dpkg</span></li>
+                        <li>Red Hat/CentOS: <span class="code">yum</span>, <span class="code">dnf</span>, <span class="code">rpm</span></li>
+                        <li>General: <span class="code">curl</span>, <span class="code">wget</span></li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Package Management Systems" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 6 -->
+            <div class="section" id="networking">
+                <div class="section-header">
+                    <span class="section-icon">🌐</span>
+                    <h2>6. Networking Basics</h2>
+                </div>
+                <p><strong>Why:</strong> Troubleshoot connectivity, APIs, and services.</p>
+                <div class="key-tools">
+                    <h3>Key Tools:</h3>
+                    <ul>
+                        <li><span class="code">netstat</span>, <span class="code">ss</span>: Check open ports</li>
+                        <li><span class="code">curl</span>/<span class="code">wget</span>: Test APIs/download files</li>
+                        <li><span class="code">nslookup</span>, <span class="code">dig</span>: DNS troubleshooting</li>
+                        <li><span class="code">ifconfig</span>/<span class="code">ip</span>: Network interface configuration</li>
+                        <li>Firewalls: <span class="code">iptables</span>, <span class="code">ufw</span>, or <span class="code">firewalld</span></li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Linux Networking Diagram" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 7 -->
+            <div class="section" id="service-management">
+                <div class="section-header">
+                    <span class="section-icon">⚙️</span>
+                    <h2>7. Process & Service Management</h2>
+                </div>
+                <p><strong>Why:</strong> Manage background services (e.g., web servers, databases).</p>
+                <div class="key-tools">
+                    <h3>Key Tools:</h3>
+                    <ul>
+                        <li><span class="code">systemctl</span>: Control systemd services (start/stop/enable)</li>
+                        <li><span class="code">journalctl</span>: View system logs for services</li>
+                        <li><span class="code">cron</span>: Schedule recurring tasks</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Service Management Workflow" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 8 -->
+            <div class="section" id="logging">
+                <div class="section-header">
+                    <span class="section-icon">📋</span>
+                    <h2>8. Logging & Debugging</h2>
+                </div>
+                <p><strong>Why:</strong> Diagnose issues in applications and infrastructure.</p>
+                <div class="key-tools">
+                    <h3>Key Tools:</h3>
+                    <ul>
+                        <li><span class="code">tail -f</span>, <span class="code">less</span>: Monitor logs in real-time</li>
+                        <li><span class="code">grep</span>: Filter logs for errors</li>
+                        <li><span class="code">journalctl</span>: Query system logs (systemd-based systems)</li>
+                        <li><span class="code">dmesg</span>: Kernel logs</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Log Analysis and Debugging" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 9 -->
+            <div class="section" id="ssh">
+                <div class="section-header">
+                    <span class="section-icon">🔑</span>
+                    <h2>9. SSH & Remote Access</h2>
+                </div>
+                <p><strong>Why:</strong> Securely manage remote servers.</p>
+                <div class="key-skills">
+                    <h3>Key Skills:</h3>
+                    <ul>
+                        <li>SSH key authentication (passwordless login)</li>
+                        <li><span class="code">scp</span>/<span class="code">rsync</span>: Transfer files securely</li>
+                        <li>SSH config files for managing multiple connections</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="SSH Remote Access" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 10 -->
+            <div class="section" id="environment">
+                <div class="section-header">
+                    <span class="section-icon">🔧</span>
+                    <h2>10. Environment Variables</h2>
+                </div>
+                <p><strong>Why:</strong> Configure applications and scripts (e.g., API keys, paths).</p>
+                <div class="key-skills">
+                    <h3>Key Commands:</h3>
+                    <ul>
+                        <li><span class="code">export</span>: Set variables</li>
+                        <li><span class="code">env</span>: List environment variables</li>
+                        <li>Use <span class="code">.bashrc</span> or <span class="code">/etc/environment</span> for persistence</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Environment Variables Configuration" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 11 -->
+            <div class="section" id="containerization">
+                <div class="section-header">
+                    <span class="section-icon">🐳</span>
+                    <h2>11. Containerization & Kernel Concepts</h2>
+                </div>
+                <p><strong>Why:</strong> Docker/Kubernetes rely on Linux kernel features.</p>
+                <div class="key-concepts">
+                    <h3>Key Concepts:</h3>
+                    <ul>
+                        <li>Namespaces (isolate processes)</li>
+                        <li>cgroups (resource limits)</li>
+                        <li>Basics of Docker CLI and container runtime</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Linux Containerization" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 12 -->
+            <div class="section" id="iac">
+                <div class="section-header">
+                    <span class="section-icon">🏗️</span>
+                    <h2>12. Infrastructure as Code (IaC) Integration</h2>
+                </div>
+                <p><strong>Why:</strong> Automate provisioning with tools like Terraform, Ansible, or Puppet.</p>
+                <div class="key-skills">
+                    <h3>Key Skills:</h3>
+                    <ul>
+                        <li>Use Linux as a base for IaC templates</li>
+                        <li>Automate server configuration (e.g., user creation, package installs)</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Infrastructure as Code Workflow" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 13 -->
+            <div class="section" id="security">
+                <div class="section-header">
+                    <span class="section-icon">🛡️</span>
+                    <h2>13. Security Fundamentals</h2>
+                </div>
+                <p><strong>Why:</strong> Secure servers and comply with policies.</p>
+                <div class="key-practices">
+                    <h3>Key Practices:</h3>
+                    <ul>
+                        <li>Disable root login over SSH</li>
+                        <li>Use <span class="code">fail2ban</span> for intrusion prevention</li>
+                        <li>Regular updates (<span class="code">apt update && apt upgrade</span>)</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Linux Security Measures" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 14 -->
+            <div class="section" id="cloud">
+                <div class="section-header">
+                    <span class="section-icon">☁️</span>
+                    <h2>14. Cloud Integration</h2>
+                </div>
+                <p><strong>Why:</strong> Most cloud instances (AWS, GCP, Azure) run Linux.</p>
+                <div class="key-skills">
+                    <h3>Key Skills:</h3>
+                    <ul>
+                        <li>Use CLI tools (e.g., AWS CLI, <span class="code">gcloud</span>)</li>
+                        <li>Manage cloud VMs via SSH</li>
+                        <li>Automate cloud workflows with Linux scripts</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Linux Cloud Integration" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Section 15 -->
+            <div class="section" id="troubleshooting">
+                <div class="section-header">
+                    <span class="section-icon">🔍</span>
+                    <h2>15. Troubleshooting Mindset</h2>
+                </div>
+                <p><strong>Why:</strong> DevOps requires solving issues quickly.</p>
+                <div class="key-skills">
+                    <h3>Approach:</h3>
+                    <ul>
+                        <li>Check logs first</li>
+                        <li>Use <span class="code">strace</span> to trace system calls</li>
+                        <li>Monitor resource usage (<span class="code">df</span>, <span class="code">free</span>, <span class="code">top</span>)</li>
+                    </ul>
+                </div>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="Linux Troubleshooting Process" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Tools to Practice With -->
+            <div class="section" id="practice-tools">
+                <div class="section-header">
+                    <span class="section-icon">🛠️</span>
+                    <h2>Tools to Practice With</h2>
+                </div>
+                <ul>
+                    <li><strong>Version Control</strong>: Git (integrate with scripts)</li>
+                    <li><strong>Configuration Management</strong>: Ansible, Chef, Puppet</li>
+                    <li><strong>Containers</strong>: Docker, Podman</li>
+                    <li><strong>CI/CD</strong>: Jenkins, GitLab CI (run pipelines on Linux agents)</li>
+                </ul>
+                <div class="image-container">
+                    <img src="/api/placeholder/600/300" alt="DevOps Tools Ecosystem" />
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Final Tip -->
+            <div class="section" id="final-tip">
+                <div class="section-header">
+                    <span class="section-icon">💡</span>
+                    <h2>Final Tip</h2>
+                </div>
+                <ul>
+                    <li><strong>Practice</strong>: Set up a Linux VM or use a cloud instance to experiment</li>
+                    <li><strong>Break Things</strong>: Learn by fixing issues (e.g., misconfigured services, permission errors)</li>
+                </ul>
+                <p>By mastering these areas, you'll build a strong foundation to automate, scale, and troubleshoot systems efficiently in a DevOps role. 🐧🚀</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Linux for DevOps</p>
+            <p>Master Linux fundamentals and boost your DevOps career!</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">↑ Top</a>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
