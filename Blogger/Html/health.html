@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover 10 practical tips to stay healthy and fit even with a busy schedule. From diet to exercise, these strategies will help you maintain a balanced lifestyle in 2023.">
+    <title>10 Proven Tips to Stay Healthy and Fit in Your Busy Lifestyle (2023)</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 2rem;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: #3498db;
+        }
+        
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(41, 128, 185, 0.8)), url('/api/placeholder/1200/600') no-repeat center center/cover;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 2rem 0;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #2ecc71;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #27ae60;
+            transform: translateY(-2px);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0;
+        }
+        
+        .blog-post {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .blog-content h2 {
+            color: #3498db;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f1f1f1;
+        }
+        
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .tip-card {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .tip {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .tip:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .tip img {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            background-color: #3498db;
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* About Page */
+        .about-section {
+            display: none;
+            padding: 3rem 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+        
+        /* Contact Page */
+        .contact-section {
+            display: none;
+            padding: 3rem 0;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style-type: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: #3498db;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #3498db;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #ddd;
+            margin-top: 2rem;
+        }
+        
+        /* Comments Section */
+        .comments-section {
+            margin-top: 3rem;
+        }
+        
+        .comments-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .comment-form {
+            margin-bottom: 2rem;
+        }
+        
+        .comments-list {
+            list-style-type: none;
+        }
+        
+        .comment {
+            background-color: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+        }
+        
+        .comment-date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .tip-card {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: #2c3e50;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 1rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Healthy Living</a>
+            <button class="hamburger" id="hamburger">☰</button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <section id="home-page">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Healthy & Fit Life</h1>
+                <p>Discover proven tips to maintain health and fitness in your busy life</p>
+                <a href="#blog-post" class="btn">Read More</a>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <main class="container">
+            <article class="blog-post" id="blog-post">
+                <header class="blog-header">
+                    <h1>10 Proven Tips to Stay Healthy and Fit in Your Busy Lifestyle (2023)</h1>
+                </header>
+                
+                <div class="blog-content">
+                    <p>Kya aapka busy schedule aapko healthy rehne se rok raha hai? Aaj ke fast-paced life me, fitness aur health ko priority dena mushkil lagta hai. Lekin, chote-chote changes se bhi aap apne lifestyle ko transform kar sakte hain. Is blog post me, hum aapko 10 easy-to-follow tips batayenge jo aapko healthy aur fit rehne me madad karenge—chahe aap kitna bhi busy kyun na ho!</p>
+                    
+                    <div class="tip-card">
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Glass of water for hydration">
+                            <h2>1. Start Your Day with a Glass of Water</h2>
+                            <p>Subah uthkar pehla kaam—ek glass paani piyein. Isse aapka metabolism boost hota hai, aur body toxins flush out hote hain. Agar aap lemon ya honey add karte hain, to benefits aur bhi increase hote hain.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Balanced diet with fruits and vegetables">
+                            <h2>2. Follow a Balanced Diet</h2>
+                            <p>Ek healthy diet me proteins, carbs, fats, vitamins, aur minerals sab hona chahiye. Junk food ko limit karein aur fresh fruits, vegetables, aur whole grains include karein.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Person exercising">
+                            <h2>3. Exercise Regularly</h2>
+                            <p>Roz 30 minutes ka workout karein—chaahe wo yoga, jogging, ya gym workout ho. Regular exercise se weight management aur mental health dono improve hote hain.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Person drinking water">
+                            <h2>4. Stay Hydrated Throughout the Day</h2>
+                            <p>Har 2-3 ghante baad paani piyein. Dehydration se energy levels kam ho sakte hain, aur ye productivity par bhi asar dalta hai.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Person sleeping peacefully">
+                            <h2>5. Get Enough Sleep</h2>
+                            <p>Ek adult ko roz 7-8 ghante ka sleep lena chahiye. Proper sleep se brain function improve hota hai, aur stress kam hota hai.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Home-cooked meal">
+                            <h2>6. Avoid Processed Foods</h2>
+                            <p>Processed foods me preservatives aur unhealthy fats hote hain. Inki jagah home-cooked meals prefer karein.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Person meditating">
+                            <h2>7. Practice Mindfulness and Meditation</h2>
+                            <p>Stress management ke liye mindfulness aur meditation bohot effective hai. Roz 10-15 minutes meditate karein aur apne thoughts ko organize karein.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Person taking a break from work">
+                            <h2>8. Take Short Breaks During Work</h2>
+                            <p>Agar aap desk job karte hain, to har 1-2 ghante baad short breaks lo. Stretching ya walking se body active rahti hai.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Digital detox concept">
+                            <h2>9. Limit Screen Time</h2>
+                            <p>Excessive screen time se eyesight aur posture par bura asar padta hai. Blue light se bachne ke liye screen time ko limit rakhein.</p>
+                        </div>
+                        
+                        <div class="tip">
+                            <img src="/api/placeholder/400/300" alt="Person maintaining consistency">
+                            <h2>10. Stay Consistent</h2>
+                            <p>Fitness journey ek marathon hai, sprint nahi. Small changes consistently implement karein, aur results zarur milega.</p>
+                        </div>
+                    </div>
+                    
+                    <h3>Conclusion</h3>
+                    <p>Healthy aur fit rehna impossible nahi hai, chahe aapka schedule kitna bhi busy ho. Bas yeh 10 tips follow karein, aur aap dekhenge ki aapka lifestyle naturally improve ho jayega. Remember, consistency key hai. Start small, stay motivated, aur apne goals ko achieve karein!</p>
+                    
+                    <div class="cta-section">
+                        <h2>Share Your Experience!</h2>
+                        <p>Kya aapne in tips ko try kiya hai? Apne experiences comment section me share karein! Aur agar aapko ye blog pasand aaya ho, to isse apne friends aur family ke sath jarur share karein. Stay healthy, stay happy!</p>
+                        <a href="#comments" class="btn">Comment Now</a>
+                    </div>
+                    
+                    <!-- Comments Section -->
+                    <section class="comments-section" id="comments">
+                        <h3>Comments (3)</h3>
+                        <div class="comment-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="comment">Your Comment</label>
+                                <textarea id="comment" placeholder="Share your thoughts..."></textarea>
+                            </div>
+                            <button class="btn" id="submit-comment">Post Comment</button>
+                        </div>
+                        
+                        <ul class="comments-list">
+                            <li class="comment">
+                                <div class="comment-header">
+                                    <span class="comment-author">Priya Sharma</span>
+                                    <span class="comment-date">March 1, 2023</span>
+                                </div>
+                                <p>Maine morning water routine follow karna start kiya hai aur mujhe energy levels me improvement feel ho raha hai. Great tips!</p>
+                            </li>
+                            <li class="comment">
+                                <div class="comment-header">
+                                    <span class="comment-author">Rahul Verma</span>
+                                    <span class="comment-date">February 25, 2023</span>
+                                </div>
+                                <p>Screen time limit karna mere liye sabse mushkil hai, lekin blue light glasses use karne se help mil rahi hai. Thanks for sharing!</p>
+                            </li>
+                            <li class="comment">
+                                <div class="comment-header">
+                                    <span class="comment-author">Anjali Patel</span>
+                                    <span class="comment-date">February 20, 2023</span>
+                                </div>
+                                <p>Home-cooked meals ka suggestion bohot practical hai. Maine processed foods kam kiye aur difference notice kiya hai. Consistency par working kar rahi hoon.</p>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
+        </main>
+    </section>
+    
+    <!-- About Page -->
+    <section id="about-page" class="about-section container">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="/api/placeholder/600/600" alt="About Our Health Blog">
+            </div>
+            <div class="about-text">
+                <h2>About Healthy Living</h2>
+                <p>Healthy Living blog 2020 me start kiya gaya tha, ek simple mission ke saath - logon ko unke busy lifestyle me bhi health aur fitness ko priority dene me help karna.</p>
+                <p>Hamari team experienced nutritionists, fitness experts, aur wellness coaches se bani hai jo regularly research-based content provide karte hain taaki aap apne health goals achieve kar sakein.</p>
+                <p>Hum believe karte hain ki healthy living sirf diet aur exercise tak limited nahi hai - ye ek lifestyle hai jisme physical, mental, aur emotional wellbeing shamil hai.</p>
+                <p>Hamara goal hai ki hum simple, practical, aur effective tips provide karein jo real life me implement kiye ja sakein, khaas tor par un logon ke liye jo busy schedules manage karte hain.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Page -->
+    <section id="contact-page" class="contact-section container">
+        <h2 style="text-align: center; margin-bottom: 2rem; color: #2c3e50;">Get In Touch</h2>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="contact-name">Your Name</label>
+                <input type="text" id="contact-name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <input type="text" id="contact-subject" placeholder="Enter subject">
+            </div>
+            <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" placeholder="Type your message here..."></textarea>
+            </div>
+            <button class="btn" type="submit">Send Message</button>
+        </form>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Healthy Living</h3>
+                    <p>Your guide to a balanced and healthy lifestyle.</p>
+                    <div class="social-links">
+                        <a href="#">FB</a>
+                        <a href="#">IG</a>
+                        <a href="#">TW</a>
+                        <a href="#">YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About</a></li>
+                        <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for the latest health tips and updates.</p>
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email" style="width: 100%; padding: 0.75rem; margin-top: 0.5rem; border-radius: 5px; border: none;">
+                    </div>
+                    <button class="btn" style="margin-top: 0.5rem;">Subscribe</button>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Healthy Living. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Navigation Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+        
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Page Navigation
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = {
+            'home': document.getElementById('home-page'),
+            'about': document.getElementById('about-page'),
+            'contact': document.getElementById('contact-page')
+        };
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const pageName = link.getAttribute('data-page');
+                
+                // Hide all pages
+                Object.values(pages).forEach(page => {
+                    page.style.display = 'none';
+                });
+                
+                // Show selected page
+                pages[pageName].style.display = 'block';
+                
+                // Close mobile menu if open
+                navMenu.classList.remove('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Comment Form Handling
+        const commentForm = document.getElementById('submit-comment');
+        const commentsList = document.querySelector('.comments-list');
+        
+        commentForm.addEventListener('click', () => {
+            const nameInput = document.getElementById('name');
+            const commentInput = document.getElementById('comment');
+            
+            if (nameInput.value.trim() === '' || commentInput.value.trim() === '') {
+                alert('Please enter both name and comment!');
+                return;
+            }
+            
+            // Create new comment
+            const newComment = document.createElement('li');
+            newComment.className = 'comment';
+            
+            const commentHeader = document.createElement('div');
+            commentHeader.className = 'comment-header';
+            
+            const author = document.createElement('span');
+            author.className = 'comment-author';
+            author.textContent = nameInput.value;
+            
+            const date = document.createElement('span');
+            date.className = 'comment-date';
+            const today = new Date();
+            date.textContent = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+            
+            const commentText = document.createElement('p');
+            commentText.textContent = commentInput.value;
+            
+            commentHeader.appendChild(author);
+            commentHeader.appendChild(date);
+            newComment.appendChild(commentHeader);
+            newComment.appendChild(commentText);
+            
+            // Add comment to list
+            commentsList.insertBefore(newComment, commentsList.firstChild);
+            
+            // Clear form
+            nameInput.value = '';
+            commentInput.value = '';
+        });
+        
+        // Contact Form Handling
+        const contactForm = document.querySelector('.contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const nameInput = document.getElementById('contact-name');
+            const emailInput = document.getElementById('contact-email');
+            const subjectInput = document.getElementById('contact-subject');
+            const messageInput = document.getElementById('contact-message');
+            
+            if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || 
+                subjectInput.value.trim() === '' || messageInput.value.trim() === '') {
+                alert('Please fill in all fields!');
+                return;
+            }
+            
+            alert('Thank you for your message! We will get back to you soon.');
+            
+            // Clear form
+            nameInput.value = '';
+            emailInput.value = '';
+            subjectInput.value = '';
+            messageInput.value = '';
+        });
+        
+        // Initialize the page (show home by default)
+        Object.values(pages).forEach(page => {
+            page.style.display = 'none';
+        });
+        pages['home'].style.display = 'block';
+    </script>
+</body>
+</html>
