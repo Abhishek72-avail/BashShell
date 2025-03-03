@@ -1,0 +1,8 @@
+## commands form checking a process, RAM space , CPU etc..
+
+$ top
+$ df -h
+$ free -h
+## premisson to create a directory in home folder commands.
+$ sudo chomd 777 /home
+$ mkdir filename
