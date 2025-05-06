@@ -16,3 +16,5 @@ echo "enter the name:"
 read username 
 
 echo "you entered $username"
+
+echo "this is a test argument $0 are $1 and $2"
