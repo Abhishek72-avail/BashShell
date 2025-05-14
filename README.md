@@ -158,3 +158,4 @@ git pull origin branch     # Pull latest changes
 sudo systemctl start jenkins   # Start Jenkins
 sudo systemctl stop jenkins    # Stop Jenkins
 sudo systemctl status jenkins  # Check Jenkins status
+# Jenkins_Project_for_DevOps-
